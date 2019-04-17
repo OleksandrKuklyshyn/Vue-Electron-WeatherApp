@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import axios from 'axios'
 
+
 import App from './App'
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
+axios.defaults.baseURL = 'http://api.openweathermap.org/data/2.5';
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
